@@ -85,7 +85,7 @@ typedef struct {
 
 /*!
     \brief Initializes an allocated caption_frame_t instance
-    \param frame Pointer to prealocated caption_frame_t object
+    \param frame Pointer to preallocated caption_frame_t object
 */
 void caption_frame_init(caption_frame_t* frame);
 /*! \brief
@@ -106,7 +106,7 @@ static inline int caption_frame_rollup(caption_frame_t* frame) { return _caption
 */
 static inline double caption_frame_timestamp(caption_frame_t* frame) { return frame->timestamp; }
 /*! \brief Writes a single charcter to a caption_frame_t object
-    \param frame A pointer to an allocted and initialized caption_frame_t object
+    \param frame A pointer to an allocated and initialized caption_frame_t object
     \param row Row position to write charcter, must be between 0 and SCREEN_ROWS-1
     \param col Column position to write charcter, must be between 0 and SCREEN_ROWS-1
     \param style Style to apply to charcter

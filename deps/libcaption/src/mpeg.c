@@ -405,7 +405,7 @@ void sei_append_708(sei_t* sei, cea708_t* cea708)
     sei_message_t* msg = sei_message_new(sei_type_user_data_registered_itu_t_t35, 0, CEA608_MAX_SIZE);
     msg->size = cea708_render(cea708, sei_message_data(msg), sei_message_size(msg));
     sei_message_append(sei, msg);
-    cea708_init(cea708, sei->timestamp); // will confgure using HLS compatiable defaults
+    cea708_init(cea708, sei->timestamp); // will configure using HLS compatible defaults
 }
 
 // This should be moved to 708.c
@@ -414,7 +414,7 @@ void sei_append_708(sei_t* sei, cea708_t* cea708)
 void sei_encode_eia608(sei_t* sei, cea708_t* cea708, uint16_t cc_data)
 {
     // This one is full, flush and init a new one
-    // shoudl this be 32? I cant remember
+    // should this be 32? I cant remember
     if (31 == cea708->user_data.cc_count) {
         sei_append_708(sei, cea708);
     }
@@ -619,7 +619,7 @@ static size_t find_start_code(const uint8_t* data, size_t size)
     return 0;
 }
 
-// WILL wrap around if larger than MAX_REFRENCE_FRAMES for memory saftey
+// WILL wrap around if larger than MAX_REFRENCE_FRAMES for memory safety
 cea708_t* _mpeg_bitstream_cea708_at(mpeg_bitstream_t* packet, size_t pos) { return &packet->cea708[(packet->front + pos) % MAX_REFRENCE_FRAMES]; }
 cea708_t* _mpeg_bitstream_cea708_front(mpeg_bitstream_t* packet) { return _mpeg_bitstream_cea708_at(packet, 0); }
 cea708_t* _mpeg_bitstream_cea708_back(mpeg_bitstream_t* packet) { return _mpeg_bitstream_cea708_at(packet, packet->latent - 1); }
@@ -634,7 +634,7 @@ cea708_t* _mpeg_bitstream_cea708_emplace_back(mpeg_bitstream_t* packet, double t
 void _mpeg_bitstream_cea708_sort(mpeg_bitstream_t* packet)
 {
     // TODO better sort? (for small nearly sorted lists bubble is difficult to beat)
-    // This must be stable, decending sort
+    // This must be stable, descending sort
 again:
     for (size_t i = 1; i < packet->latent; ++i) {
         cea708_t c;

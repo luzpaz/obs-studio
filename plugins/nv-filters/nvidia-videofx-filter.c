@@ -423,7 +423,7 @@ static void nvvfx_filter_reset(void *data, calldata_t *calldata)
 }
 
 //---------------------------------------------------------------------------//
-// intialization of images //
+// initialization of images //
 
 static bool create_alpha_texture(struct nvvfx_data *filter)
 {

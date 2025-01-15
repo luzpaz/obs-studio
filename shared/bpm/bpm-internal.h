@@ -65,7 +65,7 @@ enum bpm_sm_type {
 // Broadcast Performance Encoded Rendition Metrics types
 enum bpm_erm_type {
 	BPM_ERM_FRAMES_INPUT = 1, // Frames input to the encoder rendition
-	BPM_ERM_FRAMES_SKIPPED,   // Frames skippped by the encoder rendition
+	BPM_ERM_FRAMES_SKIPPED,   // Frames skipped by the encoder rendition
 	BPM_ERM_FRAMES_OUTPUT     // Frames output (encoded) by the encoder rendition
 };
 

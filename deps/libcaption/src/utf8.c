@@ -33,7 +33,7 @@ const utf8_char_t* utf8_char_next(const utf8_char_t* c)
     return n == c ? 0 : n;
 }
 
-// returnes the length of the char in bytes
+// returns the length of the char in bytes
 size_t utf8_char_length(const utf8_char_t* c)
 {
     // count null term as zero size
@@ -97,7 +97,7 @@ size_t utf8_char_copy(utf8_char_t* dst, const utf8_char_t* src)
     return bytes;
 }
 
-// returnes the number of utf8 charcters in a string given the number of bytes
+// returns the number of utf8 charcters in a string given the number of bytes
 // to count until the a null terminator, pass 0 for size
 utf8_size_t utf8_char_count(const char* data, size_t size)
 {
@@ -117,7 +117,7 @@ utf8_size_t utf8_char_count(const char* data, size_t size)
     return count;
 }
 
-// returnes the length of the line in bytes triming not printable charcters at the end
+// returns the length of the line in bytes trimming not printable charcters at the end
 size_t utf8_trimmed_length(const utf8_char_t* data, utf8_size_t charcters)
 {
     size_t l, t = 0, split_at = 0;
@@ -160,7 +160,7 @@ size_t utf8_line_length(const utf8_char_t* data)
 // returns number of chars to include before split
 utf8_size_t utf8_wrap_length(const utf8_char_t* data, utf8_size_t size)
 {
-    // Set split_at to size, so if a split point cna not be found, retuns the size passed in
+    // Set split_at to size, so if a split point can't be found, returns the size passed in
     size_t char_length, char_count, split_at = size;
 
     for (char_count = 0; char_count <= size; ++char_count) {

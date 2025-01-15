@@ -264,7 +264,7 @@ static void do_transition(void *data, bool to_null)
 	}
 }
 
-/* get a source via its slide idx in one of slideshow_data's deques. *
+/* get a source via its slide idx in one of slideshow_data's dequeues. *
  * only used in get_new_source().                                        */
 static inline struct source_data *deque_get_source(struct deque *buf, size_t slide_idx)
 {

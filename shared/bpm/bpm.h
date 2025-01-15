@@ -5,7 +5,7 @@ extern "C" {
 #endif
 
 /* BPM callback. Allocation of BPM metrics data happens automatically
- * with the first invokation of the callback associated with the output.
+ * with the first invocation of the callback associated with the output.
  * Deallocation must be done explicitly with bpm_destroy(), after the
  * callback is removed.
  *
